@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(254, 254, 20),
+    rgb(240, 169, 37)
+  );
+  /* font-family: 'Castoro Titling', cursive; */
+}
+.box {
+  width: 4cm;
+  height: 4cm;
+  border-radius: 15px;
+  border: 2px solid rgb(9, 9, 9);
+  margin: 20px;
+  cursor: pointer;
+  background-color: rgb(35, 35, 14);
+  box-shadow: 1px 2px 8px rgb(5, 5, 5);
+  transition: transform 0.2s;
+}
+.box:hover{
+  transform: perspective(300px) translate3d(0, 0, 30px);
+}
+#display {
+  width: 10cm;
+  height: 4cm;
+  /* border: 2px solid red; */
+  position: absolute;
+  left: 37.8%;
+  top: 65%;
+  font-size: 25px;
+  text-align: center;
+}
+#message {
+  /* border: 2px solid rgb(54, 23, 209); */
+  width: 100%;
+  height: 1.2cm;
+  text-shadow: 0px 2px 5px rgb(125, 121, 121);
+}
+#result {
+
+  width: 100%;
+  height: 1.2cm;
+  text-shadow: 0px 2px 5px rgb(125, 121, 121);
+}
+#chances{
+  padding-bottom: 0.5cm;
+}
+button {
+  border-radius: 15px;
+  padding: 5px;
+  width: 100px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media only screen and (min-width: 313px) and (max-width: 360px) {
+  .box{
+    width:1.7cm;
+    height: 1.7cm;
+  }
+  .box img{
+    width: 65px;
+    height: 65px;
+  }
+  #display{
+    width: 30%;
+    height:1cm ;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  button{
+    margin: 10px 0px;
+  }
+  #result{
+    margin-top: 10px;
+  }
+
+}
+@media only screen and (min-width: 361px) and (max-width: 412px) {
+  .box{
+    width:2.3cm;
+    height: 2.3cm;
+  }
+  .box img{
+    width: 80px;
+    height: 80px;
+  }
+  #display{
+    width: 30%;
+    height:1cm ;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  button{
+    margin: 10px 0px;
+  }
+  #result{
+    margin-top: 15px;
+  }
+
+}
+@media only screen and (min-width: 413px) and (max-width: 600px) {
+  .box{
+    width:2.8cm;
+    height: 2.8cm;
+  }
+  .box img{
+    width: 100px;
+    height: 100px;
+  }
+  #display{
+    width: 30%;
+    height:1cm ;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  button{
+    margin: 3px 0px;
+  }
+  #result{
+    margin-top: 15px;
+  }
+
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .box{
+    width:3.5cm;
+    height: 3.5cm;
+  }
+  .box img{
+    width: 130px;
+    height: 130px;
+  }
+  #display{
+    width: 30%;
+    height:1cm ;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  button{
+    margin: 10px 0px;
+  }
+  #result{
+    margin-top: 10px;
+  }
+
+}

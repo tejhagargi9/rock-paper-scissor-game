@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box" id="stone" onclick="stonemanipulate()">
+        <img src="images/stone.png.png" alt="" height="150px" width="150px" />
+      </div>
+      <div class="box" id="paper" onclick="papermanipulate()">
+        <img src="images/paper.png.png" alt="" height="150px" width="150px" />
+      </div>
+      <div class="box" id="scissor" onclick="sciccormanipulate()">
+        <img src="images/scissor.png.png" alt="" height="150px" width="150px" />
+      </div>
+      <div id="display">
+        <div id="message"></div>
+        <div id="result"></div>
+        <div class="chances" id="chances"></div>
+        <button id="btn" onclick="resetButton()">Clear All</button>
+        <a href="index.html"><button id="btn">Quit</button></a>
+      </div>
+    </div>
+
+    <script>
+      let stone = document.getElementById("stone");
+      let paper = document.getElementById("paper");
+      let scissor = document.getElementById("scissor");
+      let message = document.getElementById("message");
+      let result = document.getElementById("result");
+      let playAgainButton = document.getElementById("btn");
+      
+      let score = document.getElementById("chances")
+      let chances = 0;
+
+      let comp = Math.floor(Math.random() * 3 + 1);
+      console.log(comp);
+      score.innerText = chances
+
+      // for Robot (1 = stone, 2 = paper, 3 = scissor)
+      const resetButton = () => {
+        location.reload();
+      };
+
+      const stonemanipulate = () => {
+        let comp = Math.floor(Math.random() * 3 + 1);
+        if (comp === 1) {
+          message.innerText = "Rock vs Rock,  Draw!";
+          result.innerText = "Play Again";
+          score.innerText ="Score: " +  chances
+        } else if (comp === 2) {
+          chances--;
+          message.innerText = "Rock vs Paper, You Lose!";
+          result.innerText = "Exite?, Play Again";
+          score.innerText ="Score: "+ chances
+          
+        } else {
+          chances++;
+
+          message.innerText = "Rock vs Scissor, You Won!";
+          result.innerText = "Great, Play Again";
+          score.innerText = "Score: " + chances
+        }
+      };
+      const papermanipulate = () => {
+        let comp = Math.floor(Math.random() * 3 + 1);
+        if (comp === 1) {
+          chances++
+
+          message.innerText = "Paper vs Rock,  You Won!";
+          result.innerText = "Play Again";
+          score.innerText ="Score: " + chances
+
+        } else if (comp === 2) {
+          message.innerText = "Paper vs Paper, Draw!";
+          result.innerText = "Play Again";
+          score.innerText ="Score: " +  chances
+        } else {
+          chances--;
+
+          message.innerText = "Paper vs Scissor, You Lose!";
+          result.innerText = "Exite?, Play Again";
+          score.innerText ="Score: "  + chances
+        }
+      };
+
+      const sciccormanipulate = () => {
+        let comp = Math.floor(Math.random() * 3 + 1);
+        if (comp === 1) {
+          chances--;
+
+          message.innerText = "Scissor vs Rock,  You Lose!";
+          result.innerText = "Play Again";
+          score.innerText = "Score: " + chances
+        } else if (comp === 2) {
+          chances++;
+
+          message.innerText = "Scissor vs Paper, You Won!";
+          result.innerText = "Great, Play Again";
+          score.innerText = "Score: " + chances
+        } else {
+          message.innerText = "Scissor vs Scissor, Draw!";
+          result.innerText = "Play Again";
+          score.innerText = "Score: " + chances
+        }
+      };
+    </script>
+  </body>
+</html>
